@@ -1,0 +1,128 @@
+.container {
+  height: 100vh;
+  margin: 0 20px;
+  display: flex;
+  position: relative;
+}
+
+.logo {
+  position: absolute;
+  top: 40px;
+  left: 50px;
+}
+
+.content {
+  display: flex;
+  width: 100%;
+}
+
+.leftSide {
+  height: 100vh;
+  width: 50%;
+  background-color: #fbfbfb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 20px; // Adds space between leftSide and rightSide
+
+  img {
+    max-width: 90%; // Prevents the image from touching the edges
+    height: auto;
+    margin: 0 auto; // Centers the image
+  }
+}
+
+.rightSide {
+  height: 100vh;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & > div {
+    width: 100%;
+    max-width: 400px;
+    padding: 0 20px;
+
+    h1 {
+      font-size: 40px;
+      color: #213f7d;
+      font-weight: 700;
+      margin-bottom: 10px;
+      text-align: left;
+    }
+
+    p {
+      color: #545f7d;
+      margin-bottom: 30px;
+      font-weight: 400;
+      text-align: left;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+
+      input {
+        padding: 12px;
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 14px;
+      }
+
+      h3 {
+        color: #39cdcc;
+        font-size: 12px;
+        margin-bottom: 20px;
+        text-align: left;
+        cursor: pointer;
+      }
+
+      button {
+        background-color: #39cdcc;
+        color: #fff;
+        padding: 12px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background 0.3s;
+
+        &:hover {
+          background-color: #2fa5a5;
+        }
+      }
+    }
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+  }
+
+  .leftSide {
+    display: none;
+  }
+
+  .rightSide {
+    width: 100%;
+    background: url("/loginpic.png") no-repeat center center;
+    background-size: cover;
+
+    & > div {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 40px 20px;
+      border-radius: 8px;
+      text-align: center;
+
+      h1,
+      p,
+      h3 {
+        text-align: center;
+      }
+    }
+  }
+}
