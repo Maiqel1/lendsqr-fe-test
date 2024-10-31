@@ -1,0 +1,81 @@
+.usersPage {
+  padding: 24px 0px;
+  background: #fbfbfb;
+
+  h1 {
+    font-size: 24px;
+    color: #213f7d;
+    margin-bottom: 40px;
+    font-weight: 500;
+  }
+
+  .statsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+
+  .statsCard {
+    background: #ffffff;
+    border: 1px solid rgba(33, 63, 125, 0.06);
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+    border-radius: 4px;
+    padding: 20px;
+
+    .icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
+
+      &.users {
+        background: rgba(223, 24, 255, 0.1);
+      }
+      &.active {
+        background: rgba(87, 24, 255, 0.1);
+      }
+      &.loans {
+        background: rgba(245, 95, 68, 0.1);
+      }
+      &.savings {
+        background: rgba(255, 51, 102, 0.1);
+      }
+    }
+
+    .label {
+      font-size: 14px;
+      color: #545f7d;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .value {
+      font-size: 24px;
+      color: #213f7d;
+      font-weight: 600;
+    }
+  }
+
+  .tableSection {
+    position: relative;
+  }
+
+  .filterOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: 100;
+
+    // This ensures clicks outside the filter close it
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+}
