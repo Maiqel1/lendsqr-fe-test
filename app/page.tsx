@@ -1,3 +1,11 @@
-export default function Home() {
-  return <div>Hello world</div>;
-}
+import Login from "./(authentication)/login/page";
+
+const Home = () => {
+  return (
+    <div>
+      <Login />
+    </div>
+  );
+};
+
+export default Home;
