@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "./UserFilter.module.scss";
+import styles from "@/styles/UserFilter.module.scss";
 
 interface FilterData {
   organization: string;

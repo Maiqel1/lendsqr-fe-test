@@ -1,6 +1,5 @@
 import Image from "next/image";
-import styles from "./login.module.scss";
-
+import styles from "@/styles/login.module.scss";
 const Login = () => {
   return (
     <div className={styles.container}>

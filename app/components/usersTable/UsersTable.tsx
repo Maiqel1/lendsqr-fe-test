@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import styles from "./UsersTable.module.scss";
+import styles from "@/styles/UsersTable.module.scss";
 import { User } from "@/types/user";
 import { ListFilter } from "lucide-react";
 import Link from "next/link";

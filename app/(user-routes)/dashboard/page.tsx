@@ -6,9 +6,8 @@ import { UsersTable } from "@/app/components/usersTable/UsersTable";
 import { StatsCard } from "@/app/components/dashboard/statsCard/StatsCard";
 import { User, FilterParams } from "@/types/user";
 import { fetchUsers } from "@/utils/api";
-import styles from "@/app/components/dashboard/Dashboard.module.scss";
+import styles from "@/styles/Dashboard.module.scss";
 
-import { Users, UserCheck, CircleDollarSign, PiggyBank } from "lucide-react";
 import Image from "next/image";
 
 export default function Dashboard() {

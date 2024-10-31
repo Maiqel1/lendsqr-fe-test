@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import styles from "./Sidebar.module.scss";
+import styles from "@/styles/Sidebar.module.scss";
 import {
   Home,
   Users,
@@ -144,10 +144,7 @@ export default function Sidebar() {
           <div className={styles.sectionTitle}>{menu.section}</div>
           {menu.items ? (
             menu.items.map((item, subIdx) => (
-              <Link
-                href={`/dashboard`}
-                key={subIdx}
-              >
+              <Link href={`/dashboard`} key={subIdx}>
                 <p
                   className={`${styles.menuItem} ${
                     active === item.name ? styles.active : ""

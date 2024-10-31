@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Search, Bell, Menu, X } from "lucide-react";
-import styles from "./Navbar.module.scss";
+import styles from "@/styles/Navbar.module.scss";
 import Link from "next/link";
 import Image from "next/image";
 

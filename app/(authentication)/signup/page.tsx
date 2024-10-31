@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "./signup.module.scss";
+import styles from "@/styles/signup.module.scss";
 
 const Login = () => {
   return (

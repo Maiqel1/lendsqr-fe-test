@@ -1,4 +1,4 @@
-import styles from "../Dashboard.module.scss";
+import styles from "@/styles/Dashboard.module.scss";
 
 interface StatsCardProps {
   icon: React.ReactNode;
