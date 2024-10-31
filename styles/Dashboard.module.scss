@@ -1,6 +1,7 @@
 .usersPage {
-  padding: 24px 0px;
+  padding: 24px 20px;
   background: #fbfbfb;
+  overflow-x: hidden;
 
   h1 {
     font-size: 24px;
@@ -11,9 +12,8 @@
 
   .statsGrid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 24px;
-    margin-bottom: 40px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
   }
 
   .statsCard {
@@ -22,6 +22,10 @@
     box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
     border-radius: 4px;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    // justify-content: center;
 
     .icon {
       width: 40px;
@@ -60,22 +64,10 @@
     }
   }
 
-  .tableSection {
-    position: relative;
-  }
-
-  .filterOverlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.1);
-    z-index: 100;
-
-    // This ensures clicks outside the filter close it
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
+  // For medium and small screens, display two cards per row
+  @media (max-width: 768px) {
+    .statsGrid {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 }

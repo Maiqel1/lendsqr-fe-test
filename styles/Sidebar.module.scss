@@ -1,43 +1,43 @@
-@import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+// @import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 
-.sidebar {
-  font-family: "Work Sans", sans-serif;
-  background-color: #fff;
-  padding: 20px;
-  color: #555;
+// .sidebar {
+//   font-family: "Work Sans", sans-serif;
+//   background-color: #fff;
+//   padding: 20px;
+//   color: #555;
 
-  .section {
-    margin-bottom: 20px;
+//   .section {
+//     margin-bottom: 20px;
 
-    .sectionTitle {
-      font-size: 12px;
-      font-weight: bold;
-      color: #545f7d;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-    }
+//     .sectionTitle {
+//       font-size: 12px;
+//       font-weight: bold;
+//       color: #545f7d;
+//       text-transform: uppercase;
+//       margin-bottom: 10px;
+//     }
 
-    .menuItem {
-      display: flex;
-      align-items: center;
-      padding: 10px;
-      color: #213f7d;
-      font-size: 14px;
-      transition: background 0.3s;
-      text-decoration: none;
+//     .menuItem {
+//       display: flex;
+//       align-items: center;
+//       padding: 10px;
+//       color: #213f7d;
+//       font-size: 14px;
+//       transition: background 0.3s;
+//       text-decoration: none;
 
-      &:hover {
-        background-color: #e0e4e8;
-      }
+//       &:hover {
+//         background-color: #e0e4e8;
+//       }
 
-      &.active {
-        background-color: #dfeaf4;
-        color: #1a73e8;
-      }
+//       &.active {
+//         background-color: #dfeaf4;
+//         color: #1a73e8;
+//       }
 
-      .icon {
-        margin-right: 10px;
-      }
-    }
-  }
-}
+//       .icon {
+//         margin-right: 10px;
+//       }
+//     }
+//   }
+// }

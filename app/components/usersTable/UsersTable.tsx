@@ -68,12 +68,21 @@ export const UsersTable = ({ users, onFilterClick }: UsersTableProps) => {
             {[
               "organization",
               "username",
-              "email",
-              "phone Number",
-              "date joined",
+              "email", // This will be hidden on mobile
+              "phone Number", // This will be hidden on mobile
+              "date joined", // This will be hidden on mobile
               "status",
             ].map((key) => (
-              <th key={key}>
+              <th
+                key={key}
+                className={
+                  key === "email" ||
+                  key === "phone Number" ||
+                  key === "date joined"
+                    ? styles.hiddenOnMobile
+                    : ""
+                }
+              >
                 <div className={styles.headerCell}>
                   <span>{key.toUpperCase()}</span>
                   <button
@@ -100,9 +109,9 @@ export const UsersTable = ({ users, onFilterClick }: UsersTableProps) => {
             <tr key={user.id}>
               <td>{user.orgName}</td>
               <td>{user.userName}</td>
-              <td>{user.email}</td>
-              <td>{user.phoneNumber}</td>
-              <td>
+              <td className={styles.hiddenOnMobile}>{user.email}</td>
+              <td className={styles.hiddenOnMobile}>{user.phoneNumber}</td>
+              <td className={styles.hiddenOnMobile}>
                 {new Date(user.createdAt).toLocaleDateString("en-US", {
                   year: "numeric",
                   month: "short",
@@ -114,7 +123,6 @@ export const UsersTable = ({ users, onFilterClick }: UsersTableProps) => {
                   hour12: true,
                 })}
               </td>
-
               <td>
                 <span
                   className={`${styles.status} ${

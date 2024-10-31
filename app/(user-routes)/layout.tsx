@@ -1,7 +1,7 @@
 import { Work_Sans } from "next/font/google";
 import type { Metadata } from "next";
 import "../globals.css";
-import Sidebar from "../components/sidebar/Sidebar";
+// import Sidebar from "../components/sidebar/Sidebar";
 import Navbar from "../components/navbar/Navbar";
 
 // Initialize Work Sans
@@ -34,9 +34,11 @@ export default function RootLayout({
           }}
         >
           <Navbar />
-          <div style={{ display: "flex", flex: 1 }}>
-            <Sidebar />
-            <main style={{ flex: 1, padding: "20px" }}>{children}</main>
+          <div style={{ display: "flex", flex: 1, overflow: "hidden" }}>
+            {/* <Sidebar /> */}
+            <main style={{ flex: 1, padding: "20px", overflow: "auto" }}>
+              {children}
+            </main>
           </div>
         </div>
       </body>
