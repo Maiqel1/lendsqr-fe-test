@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Search, Bell, Menu, X } from "lucide-react";
 import styles from "@/styles/Navbar.module.scss";
 import Link from "next/link";
@@ -8,10 +8,19 @@ import Image from "next/image";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [username, setUsername] = useState<string | null>("");
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+      const user = JSON.parse(storedUser);
+      setUsername(user.username);
+    }
+  }, []);
 
   return (
     <nav className={styles.navbar}>
@@ -65,7 +74,7 @@ const Navbar = () => {
               className={styles.avatarImage}
             />
           </div>
-          <span className={styles.username}>Adedeji</span>
+          <span className={styles.username}>{username}</span>
         </div>
       </div>
     </nav>

@@ -1,7 +1,52 @@
-import Image from "next/image";
-import styles from "@/styles/signup.module.scss";
+"use client";
 
-const Login = () => {
+import React, { useState } from "react";
+import Image from "next/image";
+import { registerUser } from "@/utils/authHelpers";
+import styles from "@/styles/signup.module.scss";
+import { useRouter } from "next/navigation";
+
+const Signup = () => {
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [error, setError] = useState("");
+  const router = useRouter();
+
+  const validateEmail = (email: string) => {
+    const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return pattern.test(email);
+  };
+
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
+    if (!username || !email || !password || !confirmPassword) {
+      setError("All fields are required.");
+      return;
+    }
+    if (!validateEmail(email)) {
+      setError("Invalid email format.");
+      return;
+    }
+    if (password.length < 6) {
+      setError("Password must be at least 6 characters long.");
+      return;
+    }
+    if (password !== confirmPassword) {
+      setError("Passwords do not match.");
+      return;
+    }
+
+    try {
+      await registerUser(username, email, password);
+      alert("Account created successfully!");
+      router.push("/login");
+    } catch (err) {
+      setError("Registration failed");
+    }
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.logo}>
@@ -20,12 +65,32 @@ const Login = () => {
           <div>
             <h1>Welcome!</h1>
             <p>Create an Account</p>
-            <form>
-              <input type='text' placeholder='Choose a Username' />
-              <input type='text' placeholder='Email' />
-              <input type='password' placeholder='Password' />
-              <input type='password' placeholder='Confirm Password' />
-
+            {error && <p style={{ color: "red" }}>{error}</p>}
+            <form onSubmit={handleSubmit}>
+              <input
+                type='text'
+                placeholder='Choose a Username'
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+              />
+              <input
+                type='text'
+                placeholder='Email'
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <input
+                type='password'
+                placeholder='Password'
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <input
+                type='password'
+                placeholder='Confirm Password'
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+              />
               <button type='submit'>Create Account</button>
             </form>
           </div>
@@ -35,4 +100,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Signup;
