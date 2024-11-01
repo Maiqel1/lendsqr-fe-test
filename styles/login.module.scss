@@ -23,12 +23,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-right: 20px; // Adds space between leftSide and rightSide
+  padding-right: 20px;
 
   img {
-    max-width: 90%; // Prevents the image from touching the edges
+    max-width: 90%;
     height: auto;
-    margin: 0 auto; // Centers the image
+    margin: 0 auto;
   }
 }
 
@@ -69,6 +69,29 @@
         border: 1px solid #ddd;
         border-radius: 5px;
         font-size: 14px;
+        width: 100%;
+      }
+
+      .passwordInput {
+        position: relative;
+        margin-bottom: 20px;
+
+        input {
+          margin-bottom: 0;
+          padding-right: 60px;
+        }
+
+        .showPassword {
+          position: absolute;
+          right: 12px;
+          top: 50%;
+          transform: translateY(-50%);
+          color: #39cdcc;
+          font-size: 12px;
+          cursor: pointer;
+          user-select: none;
+          font-weight: 600;
+        }
       }
 
       h3 {
@@ -95,6 +118,11 @@
       }
     }
   }
+}
+
+.error {
+  color: red;
+  margin-bottom: 15px;
 }
 
 /* Mobile Styles */

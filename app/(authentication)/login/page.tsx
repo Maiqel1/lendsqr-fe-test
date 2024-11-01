@@ -11,6 +11,7 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const router = useRouter();
 
   const validateEmail = (email: string) => {
@@ -63,7 +64,7 @@ const Login = () => {
           <div>
             <h1>Welcome!</h1>
             <p>Enter details to login.</p>
-            {error && <p style={{ color: "red" }}>{error}</p>}
+            {error && <p className={styles.error}>{error}</p>}
             <form onSubmit={handleSubmit}>
               <input
                 type='text'
@@ -71,16 +72,23 @@ const Login = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
-              <input
-                type='password'
-                placeholder='Password'
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
+              <div className={styles.passwordInput}>
+                <input
+                  type={showPassword ? "text" : "password"}
+                  placeholder='Password'
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+                <span
+                  className={styles.showPassword}
+                  onClick={() => setShowPassword(!showPassword)}
+                >
+                  {showPassword ? "HIDE" : "SHOW"}
+                </span>
+              </div>
               <h3>FORGOT PASSWORD?</h3>
               <button type='submit'>Log in</button>
             </form>
-
             <p style={{ textAlign: "center", marginTop: "20px" }}>
               Don't have an account? Create one{" "}
               <span>
