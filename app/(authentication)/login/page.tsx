@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import { loginUser } from "@/utils/authHelpers";
+import { initializeTestUser, loginUser } from "@/utils/authHelpers";
 import styles from "@/styles/login.module.scss";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
@@ -37,6 +37,13 @@ const Login = () => {
       setError("Invalid credentials");
     }
   };
+
+  useEffect(() => {
+    const init = async () => {
+      await initializeTestUser();
+    };
+    init();
+  }, []);
 
   return (
     <div className={styles.container}>
