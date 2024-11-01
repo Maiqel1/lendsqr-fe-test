@@ -5,6 +5,7 @@ import Image from "next/image";
 import { registerUser } from "@/utils/authHelpers";
 import styles from "@/styles/signup.module.scss";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const Signup = () => {
   const [username, setUsername] = useState("");
@@ -93,6 +94,15 @@ const Signup = () => {
               />
               <button type='submit'>Create Account</button>
             </form>
+
+            <p style={{ textAlign: "center", marginTop: "20px" }}>
+              Already have an account?&nbsp;
+              <span>
+                <Link href='/login' style={{ textDecoration: "underline" }}>
+                  Login
+                </Link>
+              </span>
+            </p>
           </div>
         </div>
       </div>

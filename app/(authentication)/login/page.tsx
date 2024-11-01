@@ -5,6 +5,7 @@ import Image from "next/image";
 import { loginUser } from "@/utils/authHelpers";
 import styles from "@/styles/login.module.scss";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -13,7 +14,7 @@ const Login = () => {
   const router = useRouter();
 
   const validateEmail = (email: string) => {
-    const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Basic email regex
+    const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return pattern.test(email);
   };
 
@@ -72,6 +73,15 @@ const Login = () => {
               <h3>FORGOT PASSWORD?</h3>
               <button type='submit'>Log in</button>
             </form>
+
+            <p style={{ textAlign: "center", marginTop: "20px" }}>
+              Don't have an account? Create one{" "}
+              <span>
+                <Link href='/signup' style={{ textDecoration: "underline" }}>
+                  here
+                </Link>
+              </span>
+            </p>
           </div>
         </div>
       </div>
