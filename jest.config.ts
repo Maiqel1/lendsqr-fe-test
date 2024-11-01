@@ -11,7 +11,9 @@ const customJestConfig: Config = {
   moduleNameMapper: {
     "^@/components/(.*)$": "<rootDir>/components/$1",
     "^@/app/(.*)$": "<rootDir>/app/$1",
+    "^@/utils/(.*)$": "<rootDir>/utils/$1",
   },
+
   testMatch: ["**/*.test.ts", "**/*.test.tsx"],
   moduleDirectories: ["node_modules", "<rootDir>"],
 };
