@@ -90,13 +90,13 @@ export default function UserDetailsPage({
           <div className={styles.userTier}>
             <p>User's Tier</p>
             <div className={styles.stars}>
-              <Star size={16} className={styles.starFilled} />
-              <Star size={16} className={styles.starEmpty} />
-              <Star size={16} className={styles.starEmpty} />
+              <Star size={16} className={styles.starFilled} role='img' />
+              <Star size={16} className={styles.starEmpty} role='img' />
+              <Star size={16} className={styles.starEmpty} role='img' />
             </div>
           </div>
           <div className={styles.accountInfo}>
-            <h3>₦{user.accountBalance}</h3>
+            <h3>{user.accountBalance}</h3>
             <p>{user.profile.bvn}/Providus Bank</p>
           </div>
         </div>
@@ -183,13 +183,13 @@ export default function UserDetailsPage({
           <div className={styles.field}>
             <label>Monthly Income</label>
             <p>
-              ₦{user.education.monthlyIncome[0]} - ₦
+              {user.education.monthlyIncome[0]} -
               {user.education.monthlyIncome[1]}
             </p>
           </div>
           <div className={styles.field}>
             <label>Loan Repayment</label>
-            <p>₦{user.education.loanRepayment}</p>
+            <p>{user.education.loanRepayment}</p>
           </div>
         </div>
       </div>

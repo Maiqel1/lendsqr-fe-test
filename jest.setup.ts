@@ -32,7 +32,6 @@ jest.mock("next/image", () => ({
       priority: undefined,
       loading: undefined,
       quality: undefined,
-      onLoadingComplete: undefined,
     });
   },
 }));

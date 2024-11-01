@@ -50,8 +50,9 @@ export const UserFilter = ({
   return (
     <form onSubmit={handleSubmit} className={styles.filterForm}>
       <div className={styles.formGroup}>
-        <label>Organization</label>
+        <label htmlFor='organization'>Organization</label>
         <select
+          id='organization'
           value={filterData.organization}
           onChange={(e) =>
             setFilterData({ ...filterData, organization: e.target.value })
@@ -62,11 +63,10 @@ export const UserFilter = ({
           <option value='Lendstar'>Lendstar</option>
           <option value='Irorun'>Irorun</option>
         </select>
-      </div>
 
-      <div className={styles.formGroup}>
-        <label>Username</label>
+        <label htmlFor='username'>Username</label>
         <input
+          id='username'
           type='text'
           placeholder='User'
           value={filterData.username}
@@ -74,11 +74,10 @@ export const UserFilter = ({
             setFilterData({ ...filterData, username: e.target.value })
           }
         />
-      </div>
 
-      <div className={styles.formGroup}>
-        <label>Email</label>
+        <label htmlFor='email'>Email</label>
         <input
+          id='email'
           type='email'
           placeholder='Email'
           value={filterData.email}
@@ -86,22 +85,20 @@ export const UserFilter = ({
             setFilterData({ ...filterData, email: e.target.value })
           }
         />
-      </div>
 
-      <div className={styles.formGroup}>
-        <label>Date</label>
+        <label htmlFor='date'>Date</label>
         <input
+          id='date'
           type='date'
           value={filterData.date}
           onChange={(e) =>
             setFilterData({ ...filterData, date: e.target.value })
           }
         />
-      </div>
 
-      <div className={styles.formGroup}>
-        <label>Phone Number</label>
+        <label htmlFor='phoneNumber'>Phone Number</label>
         <input
+          id='phoneNumber'
           type='tel'
           placeholder='Phone Number'
           value={filterData.phoneNumber}
@@ -109,11 +106,10 @@ export const UserFilter = ({
             setFilterData({ ...filterData, phoneNumber: e.target.value })
           }
         />
-      </div>
 
-      <div className={styles.formGroup}>
-        <label>Status</label>
+        <label htmlFor='status'>Status</label>
         <select
+          id='status'
           value={filterData.status}
           onChange={(e) =>
             setFilterData({ ...filterData, status: e.target.value })

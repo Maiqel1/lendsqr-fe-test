@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import styles from "@/styles/UsersTable.module.scss";
 import { User } from "@/types/user";
-import { ListFilter } from "lucide-react";
+import { Eye, ListFilter, UserRoundCheck, UserRoundX } from "lucide-react";
 import Link from "next/link";
 
 interface UsersTableProps {
@@ -145,21 +145,27 @@ export const UsersTable = ({ users, onFilterClick }: UsersTableProps) => {
                       className={styles.dropdownItem}
                       onClick={(e) => e.stopPropagation()}
                     >
-                      <span className={styles.dropdownIcon}>👁️</span>
+                      <span className={styles.dropdownIcon}>
+                        <Eye size={16} />
+                      </span>
                       View Details
                     </Link>
                     <button
                       className={styles.dropdownItem}
                       onClick={(e) => e.stopPropagation()}
                     >
-                      <span className={styles.dropdownIcon}>⛔</span>
+                      <span className={styles.dropdownIcon}>
+                        <UserRoundX size={16} />
+                      </span>
                       Blacklist User
                     </button>
                     <button
                       className={styles.dropdownItem}
                       onClick={(e) => e.stopPropagation()}
                     >
-                      <span className={styles.dropdownIcon}>✓</span>
+                      <span className={styles.dropdownIcon}>
+                        <UserRoundCheck size={16} />
+                      </span>
                       Activate User
                     </button>
                   </div>
