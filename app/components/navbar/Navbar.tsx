@@ -19,7 +19,17 @@ const Navbar = () => {
     if (storedUser) {
       const user = JSON.parse(storedUser);
       setUsername(user.username);
+      return;
     }
+
+    const testUser = localStorage.getItem("testUser");
+    if (testUser) {
+      const user = JSON.parse(testUser);
+      setUsername(user.username);
+      return;
+    }
+
+    setUsername("Guest");
   }, []);
 
   return (
