@@ -18,22 +18,20 @@ export const UsersTable = ({ users, onFilterClick }: UsersTableProps) => {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const usersPerPage = 9;
 
-  const handleSort = (key: keyof User) => {
-    let direction: "asc" | "desc" = "asc";
-    if (sortConfig?.key === key && sortConfig.direction === "asc") {
-      direction = "desc";
-    }
-    setSortConfig({ key, direction });
+  // const handleSort = (key: keyof User) => {
+  //   let direction: "asc" | "desc" = "asc";
+  //   if (sortConfig?.key === key && sortConfig.direction === "asc") {
+  //     direction = "desc";
+  //   }
+  //   setSortConfig({ key, direction });
 
-    // Sort the users
-    const sortedUsers = [...users].sort((a, b) => {
-      if (a[key] < b[key]) return direction === "asc" ? -1 : 1;
-      if (a[key] > b[key]) return direction === "asc" ? 1 : -1;
-      return 0;
-    });
-  };
+  //   const sortedUsers = [...users].sort((a, b) => {
+  //     if (a[key] < b[key]) return direction === "asc" ? -1 : 1;
+  //     if (a[key] > b[key]) return direction === "asc" ? 1 : -1;
+  //     return 0;
+  //   });
+  // };
 
-  // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as HTMLElement;
@@ -68,9 +66,9 @@ export const UsersTable = ({ users, onFilterClick }: UsersTableProps) => {
             {[
               "organization",
               "username",
-              "email", // This will be hidden on mobile
-              "phone Number", // This will be hidden on mobile
-              "date joined", // This will be hidden on mobile
+              "email",
+              "phone Number",
+              "date joined",
               "status",
             ].map((key) => (
               <th

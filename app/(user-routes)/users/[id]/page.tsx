@@ -17,6 +17,7 @@ export default function UserDetailsPage({
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
   const router = useRouter();
+
   useEffect(() => {
     const loadUserDetails = async () => {
       try {

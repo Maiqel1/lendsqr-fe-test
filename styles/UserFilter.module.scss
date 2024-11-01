@@ -19,7 +19,7 @@
   padding: 30px;
   width: 270px;
   position: absolute;
-  top: 40px;
+  top: 400px;
   right: 100;
   z-index: 50;
   .formGroup {
@@ -83,5 +83,11 @@
         }
       }
     }
+  }
+}
+
+@media (max-width: 768px) {
+  .filterForm {
+    margin-top: 180px;
   }
 }
