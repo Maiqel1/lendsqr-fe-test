@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import "../globals.css";
 import Sidebar from "../components/sidebar/Sidebar";
 import Navbar from "../components/navbar/Navbar";
+import ProtectedRoute from "../components/protectedRoute/ProtectedRoute";
 
 // Initialize Work Sans
 const workSans = Work_Sans({
@@ -22,25 +23,27 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en' className={workSans.className}>
+    <html lang='en' className={workSans.className} suppressHydrationWarning>
       <body className={workSans.className}>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            minHeight: "100vh",
-            backgroundColor: "#fbfbfb",
-            fontFamily: "var(--font-work-sans)",
-          }}
-        >
-          <Navbar />
-          <div style={{ display: "flex", flex: 1, overflow: "hidden" }}>
-            <Sidebar />
-            <main style={{ flex: 1, padding: "20px", overflow: "auto" }}>
-              {children}
-            </main>
+        <ProtectedRoute>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              minHeight: "100vh",
+              backgroundColor: "#fbfbfb",
+              fontFamily: "var(--font-work-sans)",
+            }}
+          >
+            <Navbar />
+            <div style={{ display: "flex", flex: 1, overflow: "hidden" }}>
+              <Sidebar />
+              <main style={{ flex: 1, padding: "20px", overflow: "auto" }}>
+                {children}
+              </main>
+            </div>
           </div>
-        </div>
+        </ProtectedRoute>
       </body>
     </html>
   );

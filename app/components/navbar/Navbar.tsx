@@ -57,7 +57,11 @@ const Navbar = () => {
         </div>
       </div>
 
-      <button className={styles.mobileMenuButton} onClick={toggleMobileMenu}>
+      <button
+        className={styles.mobileMenuButton}
+        onClick={toggleMobileMenu}
+        aria-label='menu'
+      >
         {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
       </button>
 
@@ -70,7 +74,7 @@ const Navbar = () => {
           Docs
         </Link>
 
-        <button className={styles.notificationButton}>
+        <button className={styles.notificationButton} aria-label='notification'>
           <Bell size={20} />
         </button>
 

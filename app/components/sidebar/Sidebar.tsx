@@ -146,7 +146,11 @@ export default function Sidebar() {
 
   return (
     <>
-      <button className={styles.mobileMenuToggle} onClick={toggleMobileSidebar}>
+      <button
+        className={styles.mobileMenuToggle}
+        onClick={toggleMobileSidebar}
+        aria-label='menu'
+      >
         {isMobileSidebarOpen ? <X size={24} /> : <Menu size={24} />}
       </button>
 

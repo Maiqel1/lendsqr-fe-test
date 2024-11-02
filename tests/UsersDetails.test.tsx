@@ -2,10 +2,9 @@ import { render, screen, waitFor, fireEvent } from "@testing-library/react";
 import UserDetailsPage from "@/app/(user-routes)/users/[id]/page";
 import { fetchUsers } from "@/utils/api";
 import { useRouter } from "next/navigation";
-import { mockUser } from "@/mocks/mockUser"; // Make sure this is a named import
+import { mockUser } from "@/mocks/mockUser";
 import "@testing-library/jest-dom";
 
-// Mock the API and navigation before defining the tests
 jest.mock("@/utils/api", () => ({
   fetchUsers: jest.fn(),
 }));
@@ -19,7 +18,6 @@ describe("UserDetailsPage Component", () => {
   (useRouter as jest.Mock).mockReturnValue(router);
 
   beforeEach(() => {
-    // Reset the mock implementation before each test
     (fetchUsers as jest.Mock).mockResolvedValue([mockUser]);
   });
 
