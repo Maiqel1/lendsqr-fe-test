@@ -15,21 +15,23 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    const storedUser = localStorage.getItem("user");
-    if (storedUser) {
-      const user = JSON.parse(storedUser);
-      setUsername(user.username);
-      return;
-    }
+    if (typeof window !== "undefined") {
+      const storedUser = localStorage.getItem("user");
+      if (storedUser) {
+        const user = JSON.parse(storedUser);
+        setUsername(user.username);
+        return;
+      }
 
-    const testUser = localStorage.getItem("testUser");
-    if (testUser) {
-      const user = JSON.parse(testUser);
-      setUsername(user.username);
-      return;
-    }
+      const testUser = localStorage.getItem("testUser");
+      if (testUser) {
+        const user = JSON.parse(testUser);
+        setUsername(user.username);
+        return;
+      }
 
-    setUsername("Guest");
+      setUsername("Guest");
+    }
   }, []);
 
   return (

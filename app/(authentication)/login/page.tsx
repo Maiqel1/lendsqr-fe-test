@@ -41,7 +41,9 @@ const Login = () => {
 
   useEffect(() => {
     const init = async () => {
-      await initializeTestUser();
+      if (typeof window !== "undefined") {
+        await initializeTestUser();
+      }
     };
     init();
   }, []);
